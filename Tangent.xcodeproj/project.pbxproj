@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F0EA77624A577C000CA5AD7 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F0EA77524A577C000CA5AD7 /* credentials.plist */; };
+		7F5C385524A52B550082815F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F5C385424A52B550082815F /* GoogleService-Info.plist */; };
+		7F9472A824B2E62D00AB7E18 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F9472A724B2E62D00AB7E18 /* Poppins-Bold.ttf */; };
+		7FAE739924B30A12006B6BC4 /* StudentHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAE739824B30A12006B6BC4 /* StudentHomeViewController.swift */; };
 		7FD6D4FB24A529CD00141AC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6D4FA24A529CD00141AC7 /* AppDelegate.swift */; };
 		7FD6D4FD24A529CD00141AC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6D4FC24A529CD00141AC7 /* SceneDelegate.swift */; };
 		7FD6D4FF24A529CD00141AC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6D4FE24A529CD00141AC7 /* ViewController.swift */; };
@@ -15,6 +19,9 @@
 		7FD6D50724A529CE00141AC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FD6D50524A529CE00141AC7 /* LaunchScreen.storyboard */; };
 		7FD6D51224A529CE00141AC7 /* TangentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6D51124A529CE00141AC7 /* TangentTests.swift */; };
 		7FD6D51D24A529CE00141AC7 /* TangentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6D51C24A529CE00141AC7 /* TangentUITests.swift */; };
+		A26A3590A42CB9ED75686ABB /* Pods_Tangent_TangentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD441BC200B7A6866520DDE /* Pods_Tangent_TangentUITests.framework */; };
+		F4F18F8A681F3A7B964A712A /* Pods_Tangent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B4A4C0CDCF760AFF52345E /* Pods_Tangent.framework */; };
+		F87E9B528FCE84F3B38ED357 /* Pods_TangentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7128B0348CF1DDC7F73650D7 /* Pods_TangentTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +42,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05B4A4C0CDCF760AFF52345E /* Pods_Tangent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tangent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D8784AFEF21733DB8698113 /* Pods-Tangent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tangent.release.xcconfig"; path = "Target Support Files/Pods-Tangent/Pods-Tangent.release.xcconfig"; sourceTree = "<group>"; };
+		6B0543A91EFF6D3E9A6E0DB6 /* Pods-Tangent-TangentUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tangent-TangentUITests.release.xcconfig"; path = "Target Support Files/Pods-Tangent-TangentUITests/Pods-Tangent-TangentUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7128B0348CF1DDC7F73650D7 /* Pods_TangentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TangentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F0EA77524A577C000CA5AD7 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = credentials.plist; path = ../../../Downloads/credentials.plist; sourceTree = "<group>"; };
+		7F5C385424A52B550082815F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7F9472A724B2E62D00AB7E18 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Bold.ttf"; path = "../../../Downloads/Poppins/Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		7FAE739824B30A12006B6BC4 /* StudentHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeViewController.swift; sourceTree = "<group>"; };
+		7FC27DBB43441173CF19AF07 /* Pods-Tangent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tangent.debug.xcconfig"; path = "Target Support Files/Pods-Tangent/Pods-Tangent.debug.xcconfig"; sourceTree = "<group>"; };
 		7FD6D4F724A529CD00141AC7 /* Tangent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tangent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD6D4FA24A529CD00141AC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FD6D4FC24A529CD00141AC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +65,10 @@
 		7FD6D51824A529CE00141AC7 /* TangentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TangentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD6D51C24A529CE00141AC7 /* TangentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TangentUITests.swift; sourceTree = "<group>"; };
 		7FD6D51E24A529CE00141AC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BB1E99168B7EF2B42BC55AE /* Pods-TangentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TangentTests.debug.xcconfig"; path = "Target Support Files/Pods-TangentTests/Pods-TangentTests.debug.xcconfig"; sourceTree = "<group>"; };
+		ADD441BC200B7A6866520DDE /* Pods_Tangent_TangentUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tangent_TangentUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2D3BEE0AB9E4E228956A79E /* Pods-TangentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TangentTests.release.xcconfig"; path = "Target Support Files/Pods-TangentTests/Pods-TangentTests.release.xcconfig"; sourceTree = "<group>"; };
+		DF71BA778C434DF1A659D581 /* Pods-Tangent-TangentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tangent-TangentUITests.debug.xcconfig"; path = "Target Support Files/Pods-Tangent-TangentUITests/Pods-Tangent-TangentUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4F18F8A681F3A7B964A712A /* Pods_Tangent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F87E9B528FCE84F3B38ED357 /* Pods_TangentTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +92,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A26A3590A42CB9ED75686ABB /* Pods_Tangent_TangentUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2031ECA50ED31BF715FDA279 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05B4A4C0CDCF760AFF52345E /* Pods_Tangent.framework */,
+				ADD441BC200B7A6866520DDE /* Pods_Tangent_TangentUITests.framework */,
+				7128B0348CF1DDC7F73650D7 /* Pods_TangentTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7FD6D4EE24A529CD00141AC7 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +116,8 @@
 				7FD6D51024A529CE00141AC7 /* TangentTests */,
 				7FD6D51B24A529CE00141AC7 /* TangentUITests */,
 				7FD6D4F824A529CD00141AC7 /* Products */,
+				C1FF52A9934880A43F086517 /* Pods */,
+				2031ECA50ED31BF715FDA279 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,10 +137,14 @@
 				7FD6D4FA24A529CD00141AC7 /* AppDelegate.swift */,
 				7FD6D4FC24A529CD00141AC7 /* SceneDelegate.swift */,
 				7FD6D4FE24A529CD00141AC7 /* ViewController.swift */,
+				7FAE739824B30A12006B6BC4 /* StudentHomeViewController.swift */,
 				7FD6D50024A529CD00141AC7 /* Main.storyboard */,
 				7FD6D50324A529CE00141AC7 /* Assets.xcassets */,
 				7FD6D50524A529CE00141AC7 /* LaunchScreen.storyboard */,
 				7FD6D50824A529CE00141AC7 /* Info.plist */,
+				7F5C385424A52B550082815F /* GoogleService-Info.plist */,
+				7F9472A724B2E62D00AB7E18 /* Poppins-Bold.ttf */,
+				7F0EA77524A577C000CA5AD7 /* credentials.plist */,
 			);
 			path = Tangent;
 			sourceTree = "<group>";
@@ -128,6 +167,19 @@
 			path = TangentUITests;
 			sourceTree = "<group>";
 		};
+		C1FF52A9934880A43F086517 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7FC27DBB43441173CF19AF07 /* Pods-Tangent.debug.xcconfig */,
+				2D8784AFEF21733DB8698113 /* Pods-Tangent.release.xcconfig */,
+				DF71BA778C434DF1A659D581 /* Pods-Tangent-TangentUITests.debug.xcconfig */,
+				6B0543A91EFF6D3E9A6E0DB6 /* Pods-Tangent-TangentUITests.release.xcconfig */,
+				8BB1E99168B7EF2B42BC55AE /* Pods-TangentTests.debug.xcconfig */,
+				B2D3BEE0AB9E4E228956A79E /* Pods-TangentTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +187,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7FD6D52124A529CE00141AC7 /* Build configuration list for PBXNativeTarget "Tangent" */;
 			buildPhases = (
+				35B60B9CD8C74D8D37C18540 /* [CP] Check Pods Manifest.lock */,
 				7FD6D4F324A529CD00141AC7 /* Sources */,
 				7FD6D4F424A529CD00141AC7 /* Frameworks */,
 				7FD6D4F524A529CD00141AC7 /* Resources */,
+				B5563C65213ED1DE18D1CB03 /* [CP] Embed Pods Frameworks */,
+				5C1DD7F6B4420C32EDBF8081 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,6 +207,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7FD6D52424A529CE00141AC7 /* Build configuration list for PBXNativeTarget "TangentTests" */;
 			buildPhases = (
+				6115D40758FB48A9CAF163D7 /* [CP] Check Pods Manifest.lock */,
 				7FD6D50924A529CE00141AC7 /* Sources */,
 				7FD6D50A24A529CE00141AC7 /* Frameworks */,
 				7FD6D50B24A529CE00141AC7 /* Resources */,
@@ -170,9 +226,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7FD6D52724A529CE00141AC7 /* Build configuration list for PBXNativeTarget "TangentUITests" */;
 			buildPhases = (
+				14295C23F99A32F1F3A91C90 /* [CP] Check Pods Manifest.lock */,
 				7FD6D51424A529CE00141AC7 /* Sources */,
 				7FD6D51524A529CE00141AC7 /* Frameworks */,
 				7FD6D51624A529CE00141AC7 /* Resources */,
+				5AFB770CD68E7D4FCF0981F7 /* [CP] Embed Pods Frameworks */,
+				91167F306C8DAB9444AC0D3D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -233,6 +292,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FD6D50724A529CE00141AC7 /* LaunchScreen.storyboard in Resources */,
+				7F9472A824B2E62D00AB7E18 /* Poppins-Bold.ttf in Resources */,
+				7F5C385524A52B550082815F /* GoogleService-Info.plist in Resources */,
+				7F0EA77624A577C000CA5AD7 /* credentials.plist in Resources */,
 				7FD6D50424A529CE00141AC7 /* Assets.xcassets in Resources */,
 				7FD6D50224A529CD00141AC7 /* Main.storyboard in Resources */,
 			);
@@ -254,12 +316,150 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		14295C23F99A32F1F3A91C90 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tangent-TangentUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		35B60B9CD8C74D8D37C18540 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tangent-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5AFB770CD68E7D4FCF0981F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tangent-TangentUITests/Pods-Tangent-TangentUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tangent-TangentUITests/Pods-Tangent-TangentUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tangent-TangentUITests/Pods-Tangent-TangentUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C1DD7F6B4420C32EDBF8081 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tangent/Pods-Tangent-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tangent/Pods-Tangent-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tangent/Pods-Tangent-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6115D40758FB48A9CAF163D7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TangentTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91167F306C8DAB9444AC0D3D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tangent-TangentUITests/Pods-Tangent-TangentUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tangent-TangentUITests/Pods-Tangent-TangentUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tangent-TangentUITests/Pods-Tangent-TangentUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5563C65213ED1DE18D1CB03 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tangent/Pods-Tangent-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tangent/Pods-Tangent-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tangent/Pods-Tangent-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7FD6D4F324A529CD00141AC7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7FD6D4FF24A529CD00141AC7 /* ViewController.swift in Sources */,
+				7FAE739924B30A12006B6BC4 /* StudentHomeViewController.swift in Sources */,
 				7FD6D4FB24A529CD00141AC7 /* AppDelegate.swift in Sources */,
 				7FD6D4FD24A529CD00141AC7 /* SceneDelegate.swift in Sources */,
 			);
@@ -432,6 +632,7 @@
 		};
 		7FD6D52224A529CE00141AC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FC27DBB43441173CF19AF07 /* Pods-Tangent.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,6 +651,7 @@
 		};
 		7FD6D52324A529CE00141AC7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D8784AFEF21733DB8698113 /* Pods-Tangent.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -468,6 +670,7 @@
 		};
 		7FD6D52524A529CE00141AC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BB1E99168B7EF2B42BC55AE /* Pods-TangentTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +693,7 @@
 		};
 		7FD6D52624A529CE00141AC7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2D3BEE0AB9E4E228956A79E /* Pods-TangentTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +716,7 @@
 		};
 		7FD6D52824A529CE00141AC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF71BA778C434DF1A659D581 /* Pods-Tangent-TangentUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +737,7 @@
 		};
 		7FD6D52924A529CE00141AC7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B0543A91EFF6D3E9A6E0DB6 /* Pods-Tangent-TangentUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
