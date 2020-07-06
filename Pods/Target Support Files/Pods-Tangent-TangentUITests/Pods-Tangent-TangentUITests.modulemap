@@ -1,0 +1,6 @@
+framework module Pods_Tangent_TangentUITests {
+  umbrella header "Pods-Tangent-TangentUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
