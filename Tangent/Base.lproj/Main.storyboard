@@ -92,25 +92,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="a12-02-l26">
-                                <rect key="frame" x="20" y="758" width="394" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="a12-02-l26">
+                                <rect key="frame" x="20" y="758" width="414" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8s-xu-CUM">
-                                        <rect key="frame" x="0.0" y="0.0" width="104" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8s-xu-CUM">
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="50"/>
                                         <state key="normal" title="Button" image="messages"/>
                                         <connections>
                                             <segue destination="PIb-fy-OKK" kind="presentation" id="Od2-mB-0dC"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRu-66-gkN">
-                                        <rect key="frame" x="145" y="0.0" width="104" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRu-66-gkN">
+                                        <rect key="frame" x="175" y="0.0" width="104" height="50"/>
                                         <state key="normal" title="Button" image="camera"/>
                                         <connections>
                                             <segue destination="DgV-5E-hqI" kind="presentation" id="fPI-jh-Vot"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaR-tU-3qF">
-                                        <rect key="frame" x="290" y="0.0" width="104" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaR-tU-3qF">
+                                        <rect key="frame" x="310" y="0.0" width="104" height="50"/>
                                         <color key="tintColor" red="0.15609532209999999" green="0.37021155360000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button" image="calendar"/>
                                         <connections>
@@ -121,6 +121,11 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="a12-02-l26" firstAttribute="trailing" secondItem="oKc-2C-RGq" secondAttribute="trailing" constant="20" id="0qU-g9-YIc"/>
+                            <constraint firstItem="a12-02-l26" firstAttribute="bottom" secondItem="oKc-2C-RGq" secondAttribute="bottom" id="8o1-gy-Gir"/>
+                            <constraint firstItem="a12-02-l26" firstAttribute="leading" secondItem="oKc-2C-RGq" secondAttribute="leading" constant="20" id="fF6-mo-Ke3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="oKc-2C-RGq"/>
                     </view>
                     <navigationItem key="navigationItem" id="Yt9-xi-zSk"/>
@@ -148,6 +153,9 @@
                                 <rect key="frame" x="20" y="44" width="70" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="backArrow"/>
+                                <connections>
+                                    <segue destination="suR-uo-zBH" kind="presentation" id="prz-GB-Do2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -177,6 +185,9 @@
                                 <rect key="frame" x="20" y="44" width="70" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="backArrow"/>
+                                <connections>
+                                    <segue destination="suR-uo-zBH" kind="presentation" id="mge-jo-q6C"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -206,6 +217,9 @@
                                 <rect key="frame" x="20" y="44" width="70" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="backArrow"/>
+                                <connections>
+                                    <segue destination="suR-uo-zBH" kind="presentation" id="WJX-04-PH7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -293,6 +307,9 @@
             <point key="canvasLocation" x="131.8840579710145" y="789.50892857142856"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="WJX-04-PH7"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="TangentBg" width="464" height="943"/>
         <image name="backArrow" width="50" height="50"/>
