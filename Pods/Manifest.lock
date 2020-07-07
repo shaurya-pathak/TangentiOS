@@ -373,6 +373,7 @@ PODS:
   - SDWebImage (5.8.1):
     - SDWebImage/Core (= 5.8.1)
   - SDWebImage/Core (5.8.1)
+  - SFProgressCircle (1.0.6)
   - UICircularProgressRing (6.5.0)
 
 DEPENDENCIES:
@@ -386,6 +387,7 @@ DEPENDENCIES:
   - FirebaseUI/Storage
   - GoogleSignIn
   - LGButton
+  - SFProgressCircle
   - UICircularProgressRing
 
 SPEC REPOS:
@@ -417,6 +419,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - SDWebImage
+    - SFProgressCircle
     - UICircularProgressRing
 
 SPEC CHECKSUMS:
@@ -447,8 +450,9 @@ SPEC CHECKSUMS:
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   SDWebImage: e3eae2eda88578db0685a0c88597fdadd9433f05
+  SFProgressCircle: 645d71eb3ffc56939029afa074b5a38ed3cdfa21
   UICircularProgressRing: e6852e8f88e296cbbbe2720cccb55241acda6708
 
-PODFILE CHECKSUM: bf1ff9a6677e7e107c8e4c56a27b8a0536270820
+PODFILE CHECKSUM: 70a2a9e455105ea6f4c974ff56778e5fd5ed2284
 
 COCOAPODS: 1.9.3

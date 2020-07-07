@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		7F0A3B8424B39DB7006D1DF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F0A3B8324B39DB7006D1DF3 /* Assets.xcassets */; };
 		7F0EA77624A577C000CA5AD7 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F0EA77524A577C000CA5AD7 /* credentials.plist */; };
+		7F20E49924B4433800DC3D36 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F20E49824B4433800DC3D36 /* MainViewController.swift */; };
+		7F20E49B24B44F5600DC3D36 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F20E49A24B44F5600DC3D36 /* SettingsViewController.swift */; };
 		7F5C385524A52B550082815F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F5C385424A52B550082815F /* GoogleService-Info.plist */; };
 		7F9472A824B2E62D00AB7E18 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F9472A724B2E62D00AB7E18 /* Poppins-Bold.ttf */; };
-		7FAE739924B30A12006B6BC4 /* StudentHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAE739824B30A12006B6BC4 /* StudentHomeViewController.swift */; };
 		7FD6D4FB24A529CD00141AC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6D4FA24A529CD00141AC7 /* AppDelegate.swift */; };
 		7FD6D4FD24A529CD00141AC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6D4FC24A529CD00141AC7 /* SceneDelegate.swift */; };
 		7FD6D4FF24A529CD00141AC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6D4FE24A529CD00141AC7 /* ViewController.swift */; };
@@ -48,9 +49,10 @@
 		7128B0348CF1DDC7F73650D7 /* Pods_TangentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TangentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0A3B8324B39DB7006D1DF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		7F0EA77524A577C000CA5AD7 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = credentials.plist; path = ../../../Downloads/credentials.plist; sourceTree = "<group>"; };
+		7F20E49824B4433800DC3D36 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		7F20E49A24B44F5600DC3D36 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7F5C385424A52B550082815F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7F9472A724B2E62D00AB7E18 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Bold.ttf"; path = "../../../Downloads/Poppins/Poppins-Bold.ttf"; sourceTree = "<group>"; };
-		7FAE739824B30A12006B6BC4 /* StudentHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeViewController.swift; sourceTree = "<group>"; };
 		7FC27DBB43441173CF19AF07 /* Pods-Tangent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tangent.debug.xcconfig"; path = "Target Support Files/Pods-Tangent/Pods-Tangent.debug.xcconfig"; sourceTree = "<group>"; };
 		7FD6D4F724A529CD00141AC7 /* Tangent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tangent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD6D4FA24A529CD00141AC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,7 +139,8 @@
 				7FD6D4FA24A529CD00141AC7 /* AppDelegate.swift */,
 				7FD6D4FC24A529CD00141AC7 /* SceneDelegate.swift */,
 				7FD6D4FE24A529CD00141AC7 /* ViewController.swift */,
-				7FAE739824B30A12006B6BC4 /* StudentHomeViewController.swift */,
+				7F20E49824B4433800DC3D36 /* MainViewController.swift */,
+				7F20E49A24B44F5600DC3D36 /* SettingsViewController.swift */,
 				7FD6D50024A529CD00141AC7 /* Main.storyboard */,
 				7FD6D50524A529CE00141AC7 /* LaunchScreen.storyboard */,
 				7F0A3B8324B39DB7006D1DF3 /* Assets.xcassets */,
@@ -459,9 +462,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FD6D4FF24A529CD00141AC7 /* ViewController.swift in Sources */,
-				7FAE739924B30A12006B6BC4 /* StudentHomeViewController.swift in Sources */,
 				7FD6D4FB24A529CD00141AC7 /* AppDelegate.swift in Sources */,
 				7FD6D4FD24A529CD00141AC7 /* SceneDelegate.swift in Sources */,
+				7F20E49B24B44F5600DC3D36 /* SettingsViewController.swift in Sources */,
+				7F20E49924B4433800DC3D36 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,7 +649,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.shauryapathak.Tangent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -664,7 +668,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.shauryapathak.Tangent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

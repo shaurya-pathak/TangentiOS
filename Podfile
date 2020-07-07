@@ -17,6 +17,7 @@ target 'Tangent' do
   pod 'FirebaseUI/Storage'
   pod 'LGButton'
   pod 'UICircularProgressRing'
+  pod 'SFProgressCircle'
   target 'TangentTests' do
     inherit! :search_paths
     # Pods for testing
