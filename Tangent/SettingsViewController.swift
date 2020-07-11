@@ -14,15 +14,13 @@ class Colors    {
     var showGradient : Bool!
     var themeTag : Int!
 }
-var Themes : [Colors] = []
-var selectedTheme = 0
+
 
 class SettingsViewController: UIViewController {
     
     @IBOutlet weak var gradientBackground: UIImageView!
     @IBOutlet weak var themeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var settingsText: UILabel!
-    @IBOutlet weak var backButton: UIButton!
     @IBOutlet var backgroundView: UIView!
     
     
@@ -44,7 +42,7 @@ class SettingsViewController: UIViewController {
         gradientBackground.isHidden = !(theme.showGradient)
         backgroundView.backgroundColor = theme.primary
         settingsText.textColor = theme.secondary
-        backButton.setTitleColor(theme.secondary, for: .normal)
+        navigationController?.navigationBar.barTintColor = theme.primary
         
         
     }

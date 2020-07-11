@@ -14,6 +14,12 @@ class Gradient  {
     var endColor: UIColor!
 }
 
+var Themes : [Colors] = []
+var gradientArray : [Gradient] = []
+var selectedTheme = 1
+var progress = 0.80
+var projectText = "Executive Summary Due in 2 Days"
+
 class MainViewController: UIViewController {
 
     
@@ -24,20 +30,38 @@ class MainViewController: UIViewController {
     @IBOutlet weak var deadlineLabel: UILabel!
     @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var settingsLabel: UIButton!
+    @IBOutlet weak var tangentIcon: UIImageView!
+    @IBOutlet weak var helloTextLabel: UILabel!
+    @IBOutlet weak var projectLabel: UILabel!
+    @IBOutlet weak var navigationBar: UITabBarItem!
+    @IBOutlet weak var submitButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        progressCircle.progress = 0.775
-        progressCircleLabel.text = "Done"
+        progressCircle.progress = CGFloat(progress)
+        let progressInt = Int(progress * 100)
+        progressCircleLabel.text = "\(progressInt)%"
         accountabilityGrade.layer.cornerRadius = 15
         accountabilityGrade.clipsToBounds = true
+        
         initalizeThemes()
         initalizeGradients()
         setTheme()
+        navigationController?.navigationBar.isHidden = true
         // Do any additional setup after loading the view.
     }
     
-    var gradientArray : [Gradient] = []
+    override func viewDidAppear(_ animated: Bool) {
+        setTheme()
+        deadlineLabel.text = projectText
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
+    }
+    
+    
     
     func setTheme   ()  {
         let gradient = gradientArray[selectedTheme]
@@ -51,14 +75,25 @@ class MainViewController: UIViewController {
         progressCircle.startColor = gradient.startColor
         progressCircle.endColor = gradient.endColor
         progressCircleLabel.textColor = theme.secondary
+        settingsLabel.tintColor = theme.secondary
+        tangentIcon.tintColor = theme.secondary
+        helloTextLabel.textColor = theme.secondary
+        projectLabel.textColor = theme.secondary
+        tabBarController?.tabBar.barTintColor = theme.primary
+        submitButton.setTitleColor(theme.secondary, for: .normal)
+        
     }
     
     func initalizeThemes    ()  {
+        
         let white = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
         let tangentBlue = UIColor(displayP3Red: 0/255, green: 71/255, blue: 212/255, alpha: 1.0)
+        let darkGray = UIColor(displayP3Red: 30/255, green: 30/255, blue: 30/255, alpha: 1.0)
+        let yellow = UIColor(displayP3Red: 255/255, green: 40/255, blue: 0/255, alpha: 1.0)
+        
         let standard = colorMaker(tangentBlue, secondary: white, gradient: true, tag: 0)
-        let light = colorMaker(white, secondary: UIColor(displayP3Red: 0/255, green: 71/255, blue: 212/255, alpha: 1.0), gradient: false, tag: 1)
-        let dark = colorMaker(UIColor(displayP3Red: 56/255, green: 56/255, blue: 56/255, alpha: 1.0), secondary: UIColor(displayP3Red: 212/255, green: 183/255, blue: 0/255, alpha: 1.0), gradient: false, tag: 2)
+        let light = colorMaker(white, secondary: tangentBlue, gradient: false, tag: 1)
+        let dark = colorMaker(darkGray, secondary: yellow, gradient: false, tag: 2)
         Themes.append(standard)
         Themes.append(light)
         Themes.append(dark)
@@ -92,6 +127,17 @@ class MainViewController: UIViewController {
         gradient.endColor = end
         return gradient
     }
+    
+    @IBAction func settingsButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "settingsSegue", sender: self)
+    }
+    
+    @IBAction func submitButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "submitSegue", sender: self)
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 
