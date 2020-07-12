@@ -15,12 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TangentLoadScreenBg" translatesAutoresizingMaskIntoConstraints="NO" id="W8f-Xh-He5">
-                                <rect key="frame" x="-124" y="-31" width="602" height="974"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="974" id="84A-oL-FwH"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tangent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yh4-Il-6MD">
                                 <rect key="frame" x="50" y="669" width="314" height="83"/>
                                 <constraints>
@@ -34,10 +28,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Yh4-Il-6MD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="0yQ-s6-Chc"/>
-                            <constraint firstItem="W8f-Xh-He5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="-124" id="AxJ-cT-xbJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="W8f-Xh-He5" secondAttribute="trailing" constant="-64" id="JGF-0o-oo5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yh4-Il-6MD" secondAttribute="trailing" constant="50" id="Khv-6y-cS4"/>
-                            <constraint firstItem="W8f-Xh-He5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-75" id="Yn5-XR-0SV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Yh4-Il-6MD" secondAttribute="bottom" constant="110" id="eUR-Gk-ZjJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -48,7 +39,4 @@
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="TangentLoadScreenBg" width="464" height="943"/>
-    </resources>
 </document>

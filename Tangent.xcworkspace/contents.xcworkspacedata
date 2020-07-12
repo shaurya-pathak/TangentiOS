@@ -1,6 +1,960 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "group:../../Documents/GitHub/messenger-iOS-chat-swift-firestore/ChatApp/Core"
+      name = "Core">
+      <Group
+         location = "group:Chat"
+         name = "Chat">
+         <Group
+            location = "group:Models"
+            name = "Models">
+            <FileRef
+               location = "group:ATCChatChannel.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ATChatMessage.swift">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:Adapters"
+            name = "Adapters">
+            <FileRef
+               location = "group:ATCChatUserStoryAdapter.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ATCChatThreadAdapter.swift">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:ViewControllers"
+            name = "ViewControllers">
+            <FileRef
+               location = "group:ATCChatThreadViewController.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ATCChatHomeViewController.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ATCChatThreadsViewController.swift">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:Themes"
+            name = "Themes">
+            <Group
+               location = "group:Messenger"
+               name = "Messenger">
+               <FileRef
+                  location = "group:ATCThreadCollectionViewCell.xib">
+               </FileRef>
+               <FileRef
+                  location = "group:ATCUserStoryCollectionViewCell.xib">
+               </FileRef>
+               <FileRef
+                  location = "group:ATCThreadCollectionViewCell.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:ATCUserStoryCollectionViewCell.swift">
+               </FileRef>
+            </Group>
+         </Group>
+         <Group
+            location = "group:Store"
+            name = "Store">
+            <FileRef
+               location = "group:ATCChatMockStore.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ATCRemoteData.swift">
+            </FileRef>
+         </Group>
+      </Group>
+      <Group
+         location = "group:Models"
+         name = "Models">
+         <FileRef
+            location = "group:ATCViewControllerContainerViewModel.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ATCUser.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:UIExtensions"
+         name = "UIExtensions">
+         <FileRef
+            location = "group:UIScrollView.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Date.swift">
+         </FileRef>
+         <FileRef
+            location = "group:UIView.swift">
+         </FileRef>
+         <FileRef
+            location = "group:UIColor.swift">
+         </FileRef>
+         <FileRef
+            location = "group:UITextField.swift">
+         </FileRef>
+         <FileRef
+            location = "group:String.swift">
+         </FileRef>
+         <FileRef
+            location = "group:UIImage.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Adapters"
+         name = "Adapters">
+         <FileRef
+            location = "group:ATCStoryAdapter.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ATCViewControllerContainerRowAdapter.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ATCCarouselAdapter.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:ViewControllers"
+         name = "ViewControllers">
+         <FileRef
+            location = "group:UIViewController+ATCAdditions.swift">
+         </FileRef>
+         <Group
+            location = "group:Navigation"
+            name = "Navigation">
+            <FileRef
+               location = "group:ATCHostViewController.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ATCNavigationController.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ATCMenuItemCollectionViewCellProtocol.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ATCDrawerController.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ATCMenuTableViewController.xib">
+            </FileRef>
+            <FileRef
+               location = "group:ATCMenuCollectionViewController.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ATCMenuTableViewController.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ATCMenuHeaderTableViewCell.xib">
+            </FileRef>
+            <FileRef
+               location = "group:ATCMenuHeaderTableViewCell.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ATCMenuItemRowAdapter.swift">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:ATCGenericCollectionViewController.swift">
+         </FileRef>
+         <Group
+            location = "group:Layouts"
+            name = "Layouts">
+            <FileRef
+               location = "group:ATCLiquidCollectionViewLayout.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ATCCollectionViewFlowLayout.swift">
+            </FileRef>
+         </Group>
+      </Group>
+      <Group
+         location = "group:Views"
+         name = "Views">
+         <Group
+            location = "group:Cells"
+            name = "Cells">
+            <FileRef
+               location = "group:ATCStoryCollectionViewCell.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ATCViewControllerContainerCollectionViewCell.xib">
+            </FileRef>
+            <FileRef
+               location = "group:ATCStoryCollectionViewCell.xib">
+            </FileRef>
+            <FileRef
+               location = "group:ATCViewControllerContainerCollectionViewCell.swift">
+            </FileRef>
+            <Group
+               location = "group:MenuCells"
+               name = "MenuCells">
+               <FileRef
+                  location = "group:ATCCircledIconMenuCollectionViewCell.xib">
+               </FileRef>
+               <FileRef
+                  location = "group:ATCCircledIconMenuCollectionViewCell.swift">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:Users"
+               name = "Users">
+               <FileRef
+                  location = "group:ATCMessengerUserCollectionViewCell.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:ATCMessengerUserCollectionViewCell.xib">
+               </FileRef>
+               <FileRef
+                  location = "group:ATCMessengerUserAdapter.swift">
+               </FileRef>
+            </Group>
+            <FileRef
+               location = "group:ATCCarouselCollectionViewCell.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ATCCarouselCollectionViewCell.xib">
+            </FileRef>
+         </Group>
+      </Group>
+      <Group
+         location = "group:Assets"
+         name = "Assets">
+         <Group
+            location = "group:Misc.xcassets"
+            name = "Misc.xcassets">
+            <Group
+               location = "group:camera-filled-icon.imageset"
+               name = "camera-filled-icon.imageset">
+               <FileRef
+                  location = "group:icons8-unsplash-filled-75.png">
+               </FileRef>
+               <FileRef
+                  location = "group:camera-filled-icon.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:icons8-unsplash-filled-50.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:task-filled-icon.imageset"
+               name = "task-filled-icon.imageset">
+               <FileRef
+                  location = "group:icons8-task-filled-100.png">
+               </FileRef>
+               <FileRef
+                  location = "group:icons8-task-filled-50.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:task-filled-icon.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:coins-filled-icon.imageset"
+               name = "coins-filled-icon.imageset">
+               <FileRef
+                  location = "group:icons8-coins-filled-100.png">
+               </FileRef>
+               <FileRef
+                  location = "group:coins-filled-icon.png">
+               </FileRef>
+               <FileRef
+                  location = "group:icons8-coins-filled-50.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:caret-icon.imageset"
+               name = "caret-icon.imageset">
+               <FileRef
+                  location = "group:icons8-expand-arrow-500.png">
+               </FileRef>
+               <FileRef
+                  location = "group:icons8-expand-arrow-100.png">
+               </FileRef>
+               <FileRef
+                  location = "group:caret-icon.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:twitter-icon.imageset"
+               name = "twitter-icon.imageset">
+               <FileRef
+                  location = "group:twitter-icon.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:twitter-icon-2.png">
+               </FileRef>
+               <FileRef
+                  location = "group:twitter-icon-1.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:home-menu-icon.imageset"
+               name = "home-menu-icon.imageset">
+               <FileRef
+                  location = "group:home-menu-icon-2.png">
+               </FileRef>
+               <FileRef
+                  location = "group:home-menu-icon-1.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:home-menu-icon.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:settings-menu-item.imageset"
+               name = "settings-menu-item.imageset">
+               <FileRef
+                  location = "group:settings-menu-item-1.png">
+               </FileRef>
+               <FileRef
+                  location = "group:settings-menu-item-2.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:settings-menu-item.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:icn-twtr.imageset"
+               name = "icn-twtr.imageset">
+               <FileRef
+                  location = "group:Twitter@2x.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Twitter@3x.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Twitter.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:icn-fb.imageset"
+               name = "icn-fb.imageset">
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:Facebook@3x.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Facebook.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Facebook@2x.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:ios-app-ecommerce-i-shop-onboarding-cover.imageset"
+               name = "ios-app-ecommerce-i-shop-onboarding-cover.imageset">
+               <FileRef
+                  location = "group:ios-app-ecommerce-i-shop-onboarding-cover-2.jpeg">
+               </FileRef>
+               <FileRef
+                  location = "group:ios-app-ecommerce-i-shop-onboarding-cover.jpeg">
+               </FileRef>
+               <FileRef
+                  location = "group:ios-app-ecommerce-i-shop-onboarding-cover-1.jpeg">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:facebook-icon.imageset"
+               name = "facebook-icon.imageset">
+               <FileRef
+                  location = "group:facebook-icon.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:facebook-icon-2.png">
+               </FileRef>
+               <FileRef
+                  location = "group:facebook-icon-1.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:icn-youtube.imageset"
+               name = "icn-youtube.imageset">
+               <FileRef
+                  location = "group:Youtube@3x.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:Youtube@2x.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Youtube.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:icn-instagram.imageset"
+               name = "icn-instagram.imageset">
+               <FileRef
+                  location = "group:Instagram.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:Instagram@2x.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Instagram@3x.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:calendar-icon.imageset"
+               name = "calendar-icon.imageset">
+               <FileRef
+                  location = "group:calendar-icon.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:icons8-calendar-96.png">
+               </FileRef>
+               <FileRef
+                  location = "group:icons8-calendar-97.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:analytics-icon.imageset"
+               name = "analytics-icon.imageset">
+               <FileRef
+                  location = "group:icons8-combo-chart-100.png">
+               </FileRef>
+               <FileRef
+                  location = "group:analytics-icon.png">
+               </FileRef>
+               <FileRef
+                  location = "group:icons8-combo-chart-50.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:three-equal-lines-icon.imageset"
+               name = "three-equal-lines-icon.imageset">
+               <FileRef
+                  location = "group:three-equal-lines-icon.png">
+               </FileRef>
+               <FileRef
+                  location = "group:icons8-menu-filled-100.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:icons8-menu-filled-50.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:calendar-grid-icon.imageset"
+               name = "calendar-grid-icon.imageset">
+               <FileRef
+                  location = "group:icons8-calendar-100.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:icons8-calendar-50.png">
+               </FileRef>
+               <FileRef
+                  location = "group:calendar-grid-icon.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:coins-icon.imageset"
+               name = "coins-icon.imageset">
+               <FileRef
+                  location = "group:coins-icon-1.png">
+               </FileRef>
+               <FileRef
+                  location = "group:coins-icon-2.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:coins-icon.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:camera-icon.imageset"
+               name = "camera-icon.imageset">
+               <FileRef
+                  location = "group:icons8-screenshot-75.png">
+               </FileRef>
+               <FileRef
+                  location = "group:camera-icon.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:icons8-screenshot-50.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:forward-arrow-black.imageset"
+               name = "forward-arrow-black.imageset">
+               <FileRef
+                  location = "group:forward-arrow-black-2.png">
+               </FileRef>
+               <FileRef
+                  location = "group:forward-arrow-black-1.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:forward-arrow-black.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:shopping-cart-icon.imageset"
+               name = "shopping-cart-icon.imageset">
+               <FileRef
+                  location = "group:shopping-cart-icon-2.png">
+               </FileRef>
+               <FileRef
+                  location = "group:shopping-cart-icon-1.png">
+               </FileRef>
+               <FileRef
+                  location = "group:shopping-cart-icon.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:binoculars-icon.imageset"
+               name = "binoculars-icon.imageset">
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:binoculars-icon-2.png">
+               </FileRef>
+               <FileRef
+                  location = "group:binoculars-icon-1.png">
+               </FileRef>
+               <FileRef
+                  location = "group:binoculars-icon.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:arrow-back-icon.imageset"
+               name = "arrow-back-icon.imageset">
+               <FileRef
+                  location = "group:icons8-back-filled-50.png">
+               </FileRef>
+               <FileRef
+                  location = "group:icons8-back-filled-100.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:arrow-back-icon.png">
+               </FileRef>
+            </Group>
+            <FileRef
+               location = "group:Contents.json">
+            </FileRef>
+            <Group
+               location = "group:bars-icon.imageset"
+               name = "bars-icon.imageset">
+               <FileRef
+                  location = "group:icons8-bar-chart-50.png">
+               </FileRef>
+               <FileRef
+                  location = "group:bars-icon.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:icons8-bar-chart-100.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:share-icon.imageset"
+               name = "share-icon.imageset">
+               <FileRef
+                  location = "group:share-icon-50.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:share-icon.png">
+               </FileRef>
+               <FileRef
+                  location = "group:share-icon-75.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:bell-icon.imageset"
+               name = "bell-icon.imageset">
+               <FileRef
+                  location = "group:bell-icon.png">
+               </FileRef>
+               <FileRef
+                  location = "group:icons8-notification-100.png">
+               </FileRef>
+               <FileRef
+                  location = "group:icons8-notification-50.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:activity-feed-icon.imageset"
+               name = "activity-feed-icon.imageset">
+               <FileRef
+                  location = "group:icons8-activity-feed-50.png">
+               </FileRef>
+               <FileRef
+                  location = "group:icons8-activity-feed-100.png">
+               </FileRef>
+               <FileRef
+                  location = "group:activity-feed-icon.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:logout-menu-item.imageset"
+               name = "logout-menu-item.imageset">
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:logout-menu-item-1.png">
+               </FileRef>
+               <FileRef
+                  location = "group:logout-menu-item-2.png">
+               </FileRef>
+               <FileRef
+                  location = "group:logout-menu-item.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:products-icon.imageset"
+               name = "products-icon.imageset">
+               <FileRef
+                  location = "group:products-icon.png">
+               </FileRef>
+               <FileRef
+                  location = "group:icons8-box-filled-50.png">
+               </FileRef>
+               <FileRef
+                  location = "group:icons8-box-filled-100.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:night-stars-wallpaper.imageset"
+               name = "night-stars-wallpaper.imageset">
+               <FileRef
+                  location = "group:night-stars-wallpaper.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:night-stars-wallpaper-1.png">
+               </FileRef>
+               <FileRef
+                  location = "group:night-stars-wallpaper-2.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:customers-icon.imageset"
+               name = "customers-icon.imageset">
+               <FileRef
+                  location = "group:icons8-customer-filled-50.png">
+               </FileRef>
+               <FileRef
+                  location = "group:icons8-customer-filled-100.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:customers-icon.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:check-file-icon.imageset"
+               name = "check-file-icon.imageset">
+               <FileRef
+                  location = "group:check-file-icon-1.png">
+               </FileRef>
+               <FileRef
+                  location = "group:check-file-icon-2.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:check-file-icon.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:bubbles-icon.imageset"
+               name = "bubbles-icon.imageset">
+               <FileRef
+                  location = "group:bubbles-icon-2.png">
+               </FileRef>
+               <FileRef
+                  location = "group:bubbles-icon-1.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:bubbles-icon.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:shopping-ios-app-onboarding-cover.imageset"
+               name = "shopping-ios-app-onboarding-cover.imageset">
+               <FileRef
+                  location = "group:shopping-ios-app-onboarding-cover-2.jpg">
+               </FileRef>
+               <FileRef
+                  location = "group:shopping-ios-app-onboarding-cover-1.jpg">
+               </FileRef>
+               <FileRef
+                  location = "group:shopping-ios-app-onboarding-cover.jpg">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:orders-icon.imageset"
+               name = "orders-icon.imageset">
+               <FileRef
+                  location = "group:icons8-purchase-order-100.png">
+               </FileRef>
+               <FileRef
+                  location = "group:icons8-purchase-order-50.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:orders-icon.png">
+               </FileRef>
+            </Group>
+         </Group>
+         <Group
+            location = "group:CoreImages.xcassets"
+            name = "CoreImages.xcassets">
+            <FileRef
+               location = "group:Contents.json">
+            </FileRef>
+            <Group
+               location = "group:arrow-right.imageset"
+               name = "arrow-right.imageset">
+               <FileRef
+                  location = "group:icons8-forward-filled-100.png">
+               </FileRef>
+               <FileRef
+                  location = "group:arrow-right.png">
+               </FileRef>
+               <FileRef
+                  location = "group:icons8-forward-filled-500.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+         </Group>
+      </Group>
+      <Group
+         location = "group:Helpers"
+         name = "Helpers">
+         <FileRef
+            location = "group:ATCGenericLocalHeteroDataSource.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ATCGenericLocalDataSource.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ATCUIGenericConfigurationProtocol.swift">
+         </FileRef>
+         <FileRef
+            location = "group:UITabBarItem+ATCAdditions.swift">
+         </FileRef>
+         <FileRef
+            location = "group:TimeFormatHelper.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ATCGenericFirebaseDataSource.swift">
+         </FileRef>
+         <FileRef
+            location = "group:UIImage+ATCAdditions.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:ThirdParty"
+         name = "ThirdParty">
+         <Group
+            location = "group:SnapKit"
+            name = "SnapKit">
+            <FileRef
+               location = "group:ConstraintMultiplierTarget.swift">
+            </FileRef>
+            <FileRef
+               location = "group:LayoutConstraintItem.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintDescription.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintMakerPriortizable.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintAttributes.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintViewDSL.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintPriorityTarget.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintInsets.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintMakerFinalizable.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintDSL.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintMakerExtendable.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintPriority.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintInsetTarget.swift">
+            </FileRef>
+            <FileRef
+               location = "group:SnapKit.h">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintConfig.swift">
+            </FileRef>
+            <FileRef
+               location = "group:UILayoutSupport+Extensions.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintView.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintLayoutGuide.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintLayoutSupport.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Typealiases.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintConstantTarget.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintOffsetTarget.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintMakerEditable.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintMaker.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintRelation.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintLayoutGuideDSL.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintView+Extensions.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintItem.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Constraint.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Debugging.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintRelatableTarget.swift">
+            </FileRef>
+            <FileRef
+               location = "group:LayoutConstraint.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintLayoutGuide+Extensions.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintLayoutSupportDSL.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ConstraintMakerRelatable.swift">
+            </FileRef>
+         </Group>
+      </Group>
+   </Group>
    <FileRef
       location = "group:Tangent.xcodeproj">
    </FileRef>

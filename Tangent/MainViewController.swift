@@ -47,14 +47,12 @@ class MainViewController: UIViewController {
         initalizeThemes()
         initalizeGradients()
         setTheme()
-        navigationController?.navigationBar.isHidden = true
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         setTheme()
         deadlineLabel.text = projectText
-        navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {

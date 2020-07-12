@@ -6,6 +6,8 @@ target 'Tangent' do
   use_frameworks!
 
   # Pods for Tangent
+  
+  # Firebase Pods
   pod 'Firebase/Analytics'
   pod 'Firebase/Storage'
   pod 'FirebaseUI/Auth'
@@ -13,11 +15,31 @@ target 'Tangent' do
   pod 'Firebase/Database'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
-  pod 'GoogleSignIn'
   pod 'FirebaseUI/Storage'
+  
+  # Google Sign In
+  pod 'GoogleSignIn'
+  
+  # Custom Button
   pod 'LGButton'
+  
+  # Circular Progress Bar
   pod 'UICircularProgressRing'
   pod 'SFProgressCircle'
+  
+  # Messages
+  pod 'MessageKit'
+  pod 'Alamofire'
+  pod 'Kingfisher'
+  
+  # Facebook
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
+  
+  # Calendar
+  pod 'FSCalendar'
+  
   target 'TangentTests' do
     inherit! :search_paths
     # Pods for testing
