@@ -18,7 +18,6 @@ class Colors    {
 
 class SettingsViewController: UIViewController {
     
-    @IBOutlet weak var gradientBackground: UIImageView!
     @IBOutlet weak var themeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var settingsText: UILabel!
     @IBOutlet var backgroundView: UIView!
@@ -31,15 +30,19 @@ class SettingsViewController: UIViewController {
         setTheme()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        //navigationController?.navigationBar.isHidden = false
+    }
     
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        //navigationController?.navigationBar.isHidden = true
+    }
     
     
     func setTheme   ()  {
         
         let theme = Themes[selectedTheme]
         themeSegmentedControl.selectedSegmentIndex = selectedTheme
-        gradientBackground.isHidden = !(theme.showGradient)
         backgroundView.backgroundColor = theme.primary
         settingsText.textColor = theme.secondary
         navigationController?.navigationBar.barTintColor = theme.primary

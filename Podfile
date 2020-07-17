@@ -28,17 +28,13 @@ target 'Tangent' do
   pod 'SFProgressCircle'
   
   # Messages
-  pod 'MessageKit'
-  pod 'Alamofire'
-  pod 'Kingfisher'
-  
-  # Facebook
-  pod 'FacebookCore'
-  pod 'FacebookLogin'
-  pod 'FacebookShare'
+  pod 'PubNubSwift', '~> 2.0.0'
   
   # Calendar
   pod 'FSCalendar'
+  
+  # Custom Alert View
+  pod 'SCLAlertView'
   
   target 'TangentTests' do
     inherit! :search_paths

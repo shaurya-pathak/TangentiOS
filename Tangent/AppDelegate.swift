@@ -10,11 +10,14 @@ import UIKit
 import Firebase
 import GoogleSignIn
 import FirebaseAuth
-
+import PubNub
 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate    {
+    
+    
+    
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         // ...
         print()
@@ -38,6 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate    {
                 return
             }
             else    {
+                
                 //performSegue(withIdentifier: "testSegue", sender: self)
                 print("success")
             }
@@ -49,21 +53,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate    {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+        PubNub.log.levels = [.all]
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
-        
-        /*let uiConfig = ATCChatUIConfiguration(primaryColor: UIColor(hexString: "#0084ff"),
-                                              secondaryColor: UIColor(hexString: "#f0f0f0"),
-                                              inputTextViewBgColor: UIColor(hexString: "#f4f4f6"),
-                                              inputTextViewTextColor: .black,
-                                              inputPlaceholderTextColor: UIColor(hexString: "#979797"))
-        let channel = ATCChatChannel(id: "channel_id", name: "Chat Title")
-        let viewer = ATCUser(firstName: "Florian", lastName: "Marcu")
-        let chatVC = ATCChatThreadViewController(user: viewer, channel: channel, uiConfig: uiConfig)
- */
-        // Present the chatVC view controller
         
         
         return true
@@ -104,6 +97,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate    {
     
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        UserDefaults.standard.set(deviceToken, forKey: "DeviceToken")
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        let exampleToken = Data(hexEncodedString: "740f4707bebcf74f9b7c25d48e3358945f6aa01da5ddb387462c7eaf61bb78ad")
+        UserDefaults.standard.set(exampleToken, forKey: "DeviceToken")
     }
     
     

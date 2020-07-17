@@ -16,9 +16,9 @@ class Gradient  {
 
 var Themes : [Colors] = []
 var gradientArray : [Gradient] = []
-var selectedTheme = 1
+var selectedTheme = 0
 var progress = 0.80
-var projectText = "Executive Summary Due in 2 Days"
+var projectText = "Turn In Executive Summary"
 
 class MainViewController: UIViewController {
 
@@ -26,7 +26,6 @@ class MainViewController: UIViewController {
     @IBOutlet weak var progressCircle: SFCircleGradientView!
     @IBOutlet weak var progressCircleLabel: UILabel!
     @IBOutlet weak var accountabilityGrade: UILabel!
-    @IBOutlet weak var gradientBg: UIImageView!
     @IBOutlet weak var deadlineLabel: UILabel!
     @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var settingsLabel: UIButton!
@@ -43,20 +42,20 @@ class MainViewController: UIViewController {
         progressCircleLabel.text = "\(progressInt)%"
         accountabilityGrade.layer.cornerRadius = 15
         accountabilityGrade.clipsToBounds = true
-        
+        //navigationController?.navigationBar.isHidden = true
         initalizeThemes()
         initalizeGradients()
-        setTheme()
+        //setTheme()
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         setTheme()
         deadlineLabel.text = projectText
+        //navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = false
     }
     
     
@@ -64,7 +63,6 @@ class MainViewController: UIViewController {
     func setTheme   ()  {
         let gradient = gradientArray[selectedTheme]
         let theme = Themes[selectedTheme]
-        gradientBg.isHidden = !(theme.showGradient)
         backgroundView.backgroundColor = theme.primary
         deadlineLabel.textColor = theme.secondary
         settingsLabel.setTitleColor(theme.secondary, for: .normal)
@@ -75,7 +73,7 @@ class MainViewController: UIViewController {
         progressCircleLabel.textColor = theme.secondary
         settingsLabel.tintColor = theme.secondary
         tangentIcon.tintColor = theme.secondary
-        helloTextLabel.textColor = theme.secondary
+        //helloTextLabel.textColor = theme.secondary
         projectLabel.textColor = theme.secondary
         tabBarController?.tabBar.barTintColor = theme.primary
         submitButton.setTitleColor(theme.secondary, for: .normal)
@@ -85,14 +83,12 @@ class MainViewController: UIViewController {
     func initalizeThemes    ()  {
         
         let white = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
-        let tangentBlue = UIColor(displayP3Red: 0/255, green: 71/255, blue: 212/255, alpha: 1.0)
+        let tangentBlue = UIColor(displayP3Red: 39/255, green: 100/255, blue: 195/255, alpha: 1.0)
         let darkGray = UIColor(displayP3Red: 30/255, green: 30/255, blue: 30/255, alpha: 1.0)
         let yellow = UIColor(displayP3Red: 255/255, green: 40/255, blue: 0/255, alpha: 1.0)
-        
-        let standard = colorMaker(tangentBlue, secondary: white, gradient: true, tag: 0)
+
         let light = colorMaker(white, secondary: tangentBlue, gradient: false, tag: 1)
-        let dark = colorMaker(darkGray, secondary: yellow, gradient: false, tag: 2)
-        Themes.append(standard)
+        let dark = colorMaker(darkGray, secondary: white, gradient: false, tag: 2)
         Themes.append(light)
         Themes.append(dark)
     }

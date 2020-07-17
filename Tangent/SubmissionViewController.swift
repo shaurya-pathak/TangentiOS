@@ -8,6 +8,7 @@
 
 import UIKit
 import LGButton
+import SCLAlertView
 
 class SubmissionViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -77,7 +78,7 @@ class SubmissionViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction func submitButton(_ sender: Any) {
-        showSimpleAlert()
+        showCustomAlertView()
     }
     
     func showSimpleAlert() {
@@ -100,6 +101,19 @@ class SubmissionViewController: UIViewController, UIImagePickerControllerDelegat
         self.present(alert, animated: true, completion: nil)
     }
     
+    func showCustomAlertView    ()  {
+        let appearance = SCLAlertView.SCLAppearance(
+            showCircularIcon: false
+        )
+        let alertView = SCLAlertView(appearance: appearance)
+        alertView.addButton("Submit") {
+            progress = 1.0
+            projectText = "Done!"
+            self.performSegue(withIdentifier:"afterSubmitSegue", sender: self)
+        }
+        alertView.showInfo("Submit", subTitle: "This will submit your work to Google Classroom as well.")
+    }
+    
     func setTheme   ()  {
         let theme = Themes[selectedTheme]
         let primary = theme.primary
@@ -112,7 +126,6 @@ class SubmissionViewController: UIViewController, UIImagePickerControllerDelegat
         page1Label.textColor = primary
         page2Label.textColor = primary
         page3Label.textColor = primary
-        gradientBg.isHidden = !(theme.showGradient)
         submitButton.backgroundColor = secondary
         submitButton.setTitleColor(primary, for: .normal)
         backgroundView.backgroundColor = primary

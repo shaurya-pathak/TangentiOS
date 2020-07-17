@@ -10,7 +10,7 @@ import UIKit
 import FSCalendar
 
 class deadlineCell : UITableViewCell    {
-    
+     
     @IBOutlet weak var deadlineLabel: UILabel!
     @IBOutlet weak var deadlineDateLabel: UILabel!
     @IBOutlet weak var deadlineTimeLabel: UILabel!
@@ -31,38 +31,82 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var deadlineTableView: UITableView!
     
-    var amountToDisplay = 1
+    var amountToDisplay = 0
+    var selectedDate = "none"
     
     var deadlineArray : [Deadline] = []
+    var deadlineMatchDateArray : [Deadline] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        let deadline = deadlineMaker("Assignment Due", date: "07/15/2020", time: "11:59")
+        let deadline2 = deadlineMaker("Finish Research", date: "07/15/2020", time: "11:59")
+        let deadline3 = deadlineMaker("Finish HW", date: "07/17/2020", time: "11:59")
+        deadlineArray.append(deadline)
+        deadlineArray.append(deadline2)
+        deadlineArray.append(deadline3)
         deadlineTableView.dataSource = self
         deadlineTableView.delegate = self
         calendar.dataSource = self
         calendar.delegate = self
-        self.navigationController!.title = "Calendar"
+        calendar.calendarHeaderView.backgroundColor = Themes[0].secondary
+        calendar.select(Date())
+        newDateSelected(Date())
+        calendar.reloadData()
+        
             
     }
     
     
     
     override func viewDidAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = true
     }
     
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = ("MM/dd/yyyy")
         let formattedDate = dateFormatter.string(from: date)
-        if formattedDate == "07/13/2020"    {
-            return 1
+        var amtOfDeadlines = 0
+        for i in deadlineArray  {
+            if formattedDate == i.deadlineDate    {
+            amtOfDeadlines += 1
+        }
+        }
+        return amtOfDeadlines
+    }
+    
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        newDateSelected(date)
+    }
+    
+    func newDateSelected    (_ date: Date)  {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = ("MM/dd/yyyy")
+        let formattedDate = dateFormatter.string(from: date)
+        if formattedDate == selectedDate    {
+            calendar.deselect(date)
+            selectedDate = "none"
+            deadlineTableView.reloadData()
         }
         else    {
-            return 0
+            deadlineMatchDateArray = []
+            selectedDate = formattedDate
+            
+            for i in deadlineArray  {
+                if i.deadlineDate == selectedDate   {
+                    deadlineMatchDateArray.append(i)
+                }
+            }
+            amountToDisplay = calendar.dataSource?.calendar?(calendar, numberOfEventsFor: date) as! Int
+            if amountToDisplay > 0  {
+                deadlineTableView.separatorColor = UIColor.lightGray
+            }
+            else    {
+                deadlineTableView.separatorColor = UIColor.white
+            }
+            deadlineTableView.reloadData()
         }
     }
     
@@ -76,11 +120,19 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         }
         let index = indexPath.row
         
+        
+            cell.deadlineDateLabel.text = deadlineMatchDateArray[index].deadlineDate
+            cell.deadlineLabel.text = deadlineMatchDateArray[index].deadlineTitle
+            cell.deadlineTimeLabel.text = deadlineMatchDateArray[index].deadlineTime
+            
+        
+        
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 75
     }
     
     func deadlineMaker (_ title: String, date: String, time: String) -> Deadline  {
@@ -89,6 +141,11 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         deadline.deadlineDate = date
         deadline.deadlineTime = time
         return deadline
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let index = indexPath.row
+        performSegue(withIdentifier: "submitFromCalendarSegue", sender: self)
     }
 
     /*
