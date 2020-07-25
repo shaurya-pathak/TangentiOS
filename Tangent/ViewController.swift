@@ -12,8 +12,13 @@ import FirebaseFirestore
 import GoogleSignIn
 import FirebaseDatabase
 import FirebaseAuth
+import GoogleAPIClientForREST
+import GTMSessionFetcher
 
 var goatUser = Auth.auth().currentUser?.uid
+
+let googleDriveService = GTLRDriveService()
+var googleUser: GIDGoogleUser?
 
 class ViewController: UIViewController, GIDSignInDelegate   {
     
@@ -51,7 +56,13 @@ class ViewController: UIViewController, GIDSignInDelegate   {
         print("Google Sign In didSignInForUser")
         if let error = error {
             print(error.localizedDescription)
+            googleDriveService.authorizer = nil
+            googleUser = nil
             return
+        }
+        else    {
+            googleDriveService.authorizer = user.authentication.fetcherAuthorizer()
+            googleUser = user
         }
         guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(withIDToken: (authentication.idToken)!, accessToken: (authentication.accessToken)!)
@@ -64,20 +75,6 @@ class ViewController: UIViewController, GIDSignInDelegate   {
             else    {
                 goatUser = Auth.auth().currentUser?.uid
                 self.performSegue(withIdentifier: "registerSegueGoogle", sender: self)
-                /*docRef.getDocument { (docSnapshot, error) in
-                    guard let docSnapshot = docSnapshot, docSnapshot.exists else {
-                        
-                        Auth.auth().currentUser?.sendEmailVerification { (error) in
-                            // ...
-                        }
-                        return }
-                    let myData = docSnapshot.data()
-                    firstTimeLogIn = "\(myData!["firstTimeLogIn"] ?? "")"
-                    print(goatUser)
-                    print(firstTimeLogIn)
-                    print("has been checked")
-                    self.performSegue(withIdentifier: "mapSegue", sender: self)
-                }*/
                 
             }
         })
@@ -99,3 +96,4 @@ class ViewController: UIViewController, GIDSignInDelegate   {
         
     }
 }
+

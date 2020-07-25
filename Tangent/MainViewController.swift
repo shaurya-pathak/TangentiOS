@@ -50,8 +50,8 @@ class MainViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        setTheme()
-        deadlineLabel.text = projectText
+        //setTheme()
+        //deadlineLabel.text = projectText
         //navigationController?.navigationBar.isHidden = true
     }
     
@@ -64,19 +64,20 @@ class MainViewController: UIViewController {
         let gradient = gradientArray[selectedTheme]
         let theme = Themes[selectedTheme]
         backgroundView.backgroundColor = theme.primary
-        deadlineLabel.textColor = theme.secondary
+        //deadlineLabel.textColor = theme.secondary
         settingsLabel.setTitleColor(theme.secondary, for: .normal)
         accountabilityGrade.backgroundColor = theme.secondary
         accountabilityGrade.textColor = theme.primary
-        progressCircle.startColor = gradient.startColor
-        progressCircle.endColor = gradient.endColor
+        //progressCircle.startColor = gradient.startColor
+        //progressCircle.endColor = gradient.endColor
         progressCircleLabel.textColor = theme.secondary
         settingsLabel.tintColor = theme.secondary
         tangentIcon.tintColor = theme.secondary
         //helloTextLabel.textColor = theme.secondary
         projectLabel.textColor = theme.secondary
         tabBarController?.tabBar.barTintColor = theme.primary
-        submitButton.setTitleColor(theme.secondary, for: .normal)
+        submitButton.setTitleColor(theme.primary, for: .normal)
+        submitButton.backgroundColor = theme.secondary
         
     }
     

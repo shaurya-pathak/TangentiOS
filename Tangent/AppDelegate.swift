@@ -11,7 +11,8 @@ import Firebase
 import GoogleSignIn
 import FirebaseAuth
 import PubNub
-
+import GoogleAPIClientForREST
+import HSGoogleDrivePicker
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate    {
@@ -57,6 +58,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate    {
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance()?.scopes =
+        [kGTLRAuthScopeDrive]
         
         
         return true
@@ -75,6 +78,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate    {
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         // Perform any operations when the user disconnects from app here.
         // ...
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+
+        if HSDrivePicker.handle(url) {
+            return true
+        }
+
+        //Your code for other callbacks
+
+        return true
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

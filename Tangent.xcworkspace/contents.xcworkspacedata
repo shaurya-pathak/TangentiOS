@@ -5,6 +5,9 @@
       location = "group:../../Downloads/Poppins/Poppins-Bold.ttf">
    </FileRef>
    <FileRef
+      location = "absolute:/Users/shauryapathak/Desktop/Tangent/Tangent/Dashboard.storyboard">
+   </FileRef>
+   <FileRef
       location = "group:Tangent.xcodeproj">
    </FileRef>
    <FileRef

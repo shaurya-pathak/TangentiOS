@@ -51,6 +51,8 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         deadlineTableView.delegate = self
         calendar.dataSource = self
         calendar.delegate = self
+        calendar.appearance.titleFont = UIFont(name: "Futura", size: 14)
+        calendar.appearance.headerTitleFont = UIFont(name: "Futura-Bold", size: 20)
         calendar.calendarHeaderView.backgroundColor = Themes[0].secondary
         calendar.select(Date())
         newDateSelected(Date())

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -16,20 +16,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tangent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yh4-Il-6MD">
-                                <rect key="frame" x="50" y="669" width="314" height="83"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="83" id="wMz-DS-YqH"/>
-                                </constraints>
+                                <rect key="frame" x="73" y="407" width="268.5" height="82"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="63"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.1529411765" green="0.3921568627" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="tangentLogo" translatesAutoresizingMaskIntoConstraints="NO" id="yLg-B9-vrd">
+                                <rect key="frame" x="129" y="285" width="156" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="156" id="LYR-qm-LHm"/>
+                                    <constraint firstAttribute="height" constant="114" id="xzM-kL-kgb"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Yh4-Il-6MD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="0yQ-s6-Chc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yh4-Il-6MD" secondAttribute="trailing" constant="50" id="Khv-6y-cS4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Yh4-Il-6MD" secondAttribute="bottom" constant="110" id="eUR-Gk-ZjJ"/>
+                            <constraint firstItem="Yh4-Il-6MD" firstAttribute="top" secondItem="yLg-B9-vrd" secondAttribute="bottom" constant="8" id="LAo-RJ-i2e"/>
+                            <constraint firstItem="Yh4-Il-6MD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="VJK-j5-jeM"/>
+                            <constraint firstItem="yLg-B9-vrd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Wm9-WH-GKy"/>
+                            <constraint firstItem="Yh4-Il-6MD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="tUC-zD-7uc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -39,4 +44,7 @@
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tangentLogo" width="717" height="716"/>
+    </resources>
 </document>

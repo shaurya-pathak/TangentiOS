@@ -9,6 +9,9 @@
 import UIKit
 import LGButton
 import SCLAlertView
+import GoogleAPIClientForREST
+import GoogleSignIn
+import HSGoogleDrivePicker
 
 class SubmissionViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -27,7 +30,8 @@ class SubmissionViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet var backgroundView: UIView!
     
-    
+    // Google Drive Access
+    let picker = HSDrivePicker()
     
     var imagePicker = UIImagePickerController()
     var indexImagePicker = 0
@@ -39,7 +43,7 @@ class SubmissionViewController: UIViewController, UIImagePickerControllerDelegat
         // Do any additional setup after loading the view.
         imagePicker.delegate = self
         img = [firstPageImage, secondPageImage, thirdPageImage]
-        setTheme()
+        //setTheme()
     }
     
     @IBAction func firstPageButtonPress(_ sender: Any) {
@@ -53,6 +57,11 @@ class SubmissionViewController: UIViewController, UIImagePickerControllerDelegat
     @IBAction func thirdPageButtonPress(_ sender: Any) {
         addImage(2)
     }
+    
+    @IBAction func addFileFromGoogleDriveButtonPressed(_ sender: Any) {
+        addFileFromGoogleDrive()
+    }
+    
     
     func addImage (_ index: Int)    {
         indexImagePicker = index
@@ -133,6 +142,17 @@ class SubmissionViewController: UIViewController, UIImagePickerControllerDelegat
         
         
     }
+    
+    func addFileFromGoogleDrive()  {
+        picker.pick(from: self) {
+            (manager, file) in
+
+            print("picked file: \(file?.name ?? "-none-")")
+        }
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 
@@ -144,3 +164,4 @@ class SubmissionViewController: UIViewController, UIImagePickerControllerDelegat
     */
 
 }
+

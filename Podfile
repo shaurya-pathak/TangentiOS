@@ -29,12 +29,30 @@ target 'Tangent' do
   
   # Messages
   pod 'PubNubSwift', '~> 2.0.0'
+  pod 'Alamofire'
+  pod 'Kingfisher'
+  pod 'MessageKit'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
   
   # Calendar
   pod 'FSCalendar'
   
+  # Calendar Picking
+  pod 'DatePickerDialog'
+  
   # Custom Alert View
   pod 'SCLAlertView'
+  
+  # Google Drive API
+  # pod 'GoogleAPIClientForREST/Drive', '~> 1.3.7'
+  
+  # Keyboard Hiding
+  pod 'IHKeyboardAvoiding'
+  
+  # Google Drive Picking
+  pod 'HSGoogleDrivePicker', '~> 3.0’
   
   target 'TangentTests' do
     inherit! :search_paths
