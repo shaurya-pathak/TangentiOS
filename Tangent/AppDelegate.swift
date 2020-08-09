@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate    {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance()?.scopes =
-        [kGTLRAuthScopeDrive]
+        [kGTLRAuthScopeDrive, "https://www.googleapis.com/auth/classroom.courses"]
         
         
         return true

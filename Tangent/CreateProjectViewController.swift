@@ -29,7 +29,7 @@ class CreateProjectViewController: UIViewController {
     
     func chooseDate()   {
         print("this works")
-        DatePickerDialog().show("DatePicker", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", datePickerMode: .date) {
+        DatePickerDialog().show("Select Date", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", datePickerMode: .date) {
             (date) -> Void in
             if let dt = date {
                         let formatter = DateFormatter()

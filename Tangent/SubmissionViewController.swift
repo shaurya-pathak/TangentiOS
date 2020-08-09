@@ -144,6 +144,7 @@ class SubmissionViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     func addFileFromGoogleDrive()  {
+        
         picker.pick(from: self) {
             (manager, file) in
 

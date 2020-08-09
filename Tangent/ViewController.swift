@@ -30,6 +30,7 @@ class ViewController: UIViewController, GIDSignInDelegate   {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        autoSignIn()
         db = Firestore.firestore()
         docRef = db.collection("locations").document("location2")
         GIDSignIn.sharedInstance().delegate = self
@@ -37,6 +38,13 @@ class ViewController: UIViewController, GIDSignInDelegate   {
         //print(user)
         print("ned")
         
+        
+    }
+    
+    func autoSignIn ()  {
+        if goatUser != nil  {
+            performSegue(withIdentifier: "registerSegueGoogle", sender: self)
+        }
     }
     
     /*override func viewDidAppear(_ animated: Bool) {
@@ -58,6 +66,7 @@ class ViewController: UIViewController, GIDSignInDelegate   {
             print(error.localizedDescription)
             googleDriveService.authorizer = nil
             googleUser = nil
+            
             return
         }
         else    {

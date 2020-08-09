@@ -8,6 +8,8 @@
 
 import UIKit
 import SFProgressCircle
+import GoogleAPIClientForREST
+import GoogleSignIn
 
 class Gradient  {
     var startColor: UIColor!
@@ -22,6 +24,7 @@ var projectText = "Turn In Executive Summary"
 
 class MainViewController: UIViewController {
 
+    let googleClassroomService = GTLRClassroomService()
     
     @IBOutlet weak var progressCircle: SFCircleGradientView!
     @IBOutlet weak var progressCircleLabel: UILabel!
@@ -34,6 +37,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var projectLabel: UILabel!
     @IBOutlet weak var navigationBar: UITabBarItem!
     @IBOutlet weak var submitButton: UIButton!
+    var fileList: GTLRClassroomQuery_CoursesList!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +49,15 @@ class MainViewController: UIViewController {
         //navigationController?.navigationBar.isHidden = true
         initalizeThemes()
         initalizeGradients()
+        print()
+        
+        googleClassroomList()
+        
         //setTheme()
         // Do any additional setup after loading the view.
     }
+    
+    
     
     override func viewDidAppear(_ animated: Bool) {
         //setTheme()
@@ -131,7 +141,32 @@ class MainViewController: UIViewController {
         performSegue(withIdentifier: "submitSegue", sender: self)
     }
     
-    
+    func googleClassroomList()   {
+        let classroomService = GTLRClassroomService()
+        //let sharedInstance = GIDSignIn.sharedInstance()
+        //let handler = sharedInstance
+        //classroomService.key = "258602243547-vg2s8qec0dr9eipava9meu5fcq6tqmcd.apps.googleusercontent.com"
+        let query = GTLRClassroomQuery_CoursesList.query()
+        
+        query.pageSize = 1000
+        
+        let classQuery = classroomService.executeQuery(query, completionHandler: { ticket , fileList, error in
+        
+        if error != nil {
+            let message = "Error: \(error?.localizedDescription ?? "")"
+            print(message)
+        } else {
+            if let list = fileList as? GTLRClassroomQuery_CoursesList {
+                self.fileList = list
+                print("HI THE LIST IS HERE SHARUUUU \(list)")
+            }
+            else {
+                print("Error: response is not a file list")
+            }
+            }
+            
+    }
+    ) }
     
     /*
     // MARK: - Navigation

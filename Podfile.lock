@@ -325,6 +325,9 @@ PODS:
     - Firebase/Storage (~> 6.0)
     - SDWebImage (~> 5.0)
   - FSCalendar (2.8.1)
+  - GoogleAPIClientForREST/Classroom (1.2.1):
+    - GoogleAPIClientForREST/Core
+    - GTMSessionFetcher (>= 1.1.7)
   - GoogleAPIClientForREST/Core (1.2.1):
     - GTMSessionFetcher (>= 1.1.7)
   - GoogleAPIClientForREST/Drive (1.2.1):
@@ -439,6 +442,7 @@ DEPENDENCIES:
   - FirebaseUI/Google
   - FirebaseUI/Storage
   - FSCalendar
+  - GoogleAPIClientForREST/Classroom
   - GoogleSignIn
   - HSGoogleDrivePicker (~> 3.0)
   - IHKeyboardAvoiding
@@ -549,6 +553,6 @@ SPEC CHECKSUMS:
   SFProgressCircle: 645d71eb3ffc56939029afa074b5a38ed3cdfa21
   UICircularProgressRing: e6852e8f88e296cbbbe2720cccb55241acda6708
 
-PODFILE CHECKSUM: 54a2ff4dce8a63623bb876ee4cbb2adaef0f0f0f
+PODFILE CHECKSUM: d6b29ffe16921cea43f48e17f28ddb46c561b650
 
 COCOAPODS: 1.9.3

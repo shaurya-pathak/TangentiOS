@@ -48,6 +48,9 @@ target 'Tangent' do
   # Google Drive API
   # pod 'GoogleAPIClientForREST/Drive', '~> 1.3.7'
   
+  # G Classroom API
+  pod 'GoogleAPIClientForREST/Classroom'
+  
   # Keyboard Hiding
   pod 'IHKeyboardAvoiding'
   
