@@ -425,6 +425,7 @@ PODS:
     - SDWebImage/Core (= 5.8.1)
   - SDWebImage/Core (5.8.1)
   - SFProgressCircle (1.0.6)
+  - SimpleCheckbox (2.1.0)
   - UICircularProgressRing (6.5.0)
 
 DEPENDENCIES:
@@ -452,6 +453,7 @@ DEPENDENCIES:
   - PubNubSwift (~> 2.0.0)
   - SCLAlertView
   - SFProgressCircle
+  - SimpleCheckbox
   - UICircularProgressRing
 
 SPEC REPOS:
@@ -502,6 +504,7 @@ SPEC REPOS:
     - SCLAlertView
     - SDWebImage
     - SFProgressCircle
+    - SimpleCheckbox
     - UICircularProgressRing
 
 SPEC CHECKSUMS:
@@ -551,8 +554,9 @@ SPEC CHECKSUMS:
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   SDWebImage: e3eae2eda88578db0685a0c88597fdadd9433f05
   SFProgressCircle: 645d71eb3ffc56939029afa074b5a38ed3cdfa21
+  SimpleCheckbox: ddcd433ab8c3a8f57300bebda13151a8f302c7f9
   UICircularProgressRing: e6852e8f88e296cbbbe2720cccb55241acda6708
 
-PODFILE CHECKSUM: d6b29ffe16921cea43f48e17f28ddb46c561b650
+PODFILE CHECKSUM: 96f58e56a7cab004c5e774c0f1c54ec9f7d1f1c2
 
 COCOAPODS: 1.9.3

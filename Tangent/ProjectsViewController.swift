@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleAPIClientForREST
 
 class projectCell : UITableViewCell {
     
@@ -30,12 +31,18 @@ class ProjectsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var periodLabel: UILabel!
     @IBOutlet weak var projectsTableView: UITableView!
     
+    var selectedCourse : GTLRClassroom_Course!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         projectsTableView.dataSource = self
         projectsTableView.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        courseWorkCreate()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,6 +75,21 @@ class ProjectsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func seguePerform(name: String) {
         performSegue(withIdentifier: name, sender: self)
+    }
+    
+    func courseWorkCreate() {
+        let id = selectedCourse.identifier
+        let coursework = GTLRClassroom_CourseWork.init()
+        GTLRClassroomQuery_CoursesCourseWorkCreate.query(withObject: coursework, courseId: "127062596928")
+    }
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "createProjectSegue" {
+            let destination: ImportFromGoogleClassroomViewController = segue.destination as! ImportFromGoogleClassroomViewController
+            destination.selectedCourseClass = selectedCourse
+        }
     }
     
     /*

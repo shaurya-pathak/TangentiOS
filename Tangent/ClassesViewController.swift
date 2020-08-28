@@ -9,6 +9,7 @@
 
 import UIKit
 import SCLAlertView
+import GoogleAPIClientForREST
 
 class classesCell :  UITableViewCell  {
     
@@ -16,13 +17,12 @@ class classesCell :  UITableViewCell  {
     @IBOutlet weak var subjectLabel: UILabel!
     @IBOutlet weak var periodLabel: UILabel!
     @IBOutlet weak var verticalMenuButton: UIButton!
-    @IBOutlet weak var instructorName: UILabel!
     
 }
 
 class TangentClass {
     var subject : String!
-    var period: Int!
+    var period: String!
     var instructor: String!
 }
 
@@ -35,18 +35,18 @@ class ClassesViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var classesTableView: UITableView!
     
     var classArray : [TangentClass] = []
+    var courseArray : [GTLRClassroom_Course] = []
+    var selectedIndex = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let class1 = classesMaker("Engineering", period: 2, instructor: "Mrs. Smith")
-        classArray.append(class1)
         
         classesTableView.delegate = self
         classesTableView.dataSource = self
         classesTableView.backgroundColor = UIColor.clear
-        
+        googleClassroomList()
         
     }
     
@@ -61,8 +61,7 @@ class ClassesViewController: UIViewController, UITableViewDelegate, UITableViewD
         let index = indexPath.row
         let currentClass = classArray[index]
         cell.subjectLabel.text = currentClass.subject
-        cell.instructorName.text = currentClass.instructor
-        cell.periodLabel.text = "\(currentClass.period ?? 2)"
+        cell.periodLabel.text = "\(currentClass.period ?? "2")"
         return cell
         
     }
@@ -72,6 +71,8 @@ class ClassesViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let inx = indexPath.row
+        selectedIndex = inx
         performSegue(withIdentifier: "goToClassSegue", sender: self)
     }
     
@@ -79,9 +80,8 @@ class ClassesViewController: UIViewController, UITableViewDelegate, UITableViewD
         showCustomAlert()
     }
     
-    func classesMaker  (_ subject: String, period: Int, instructor: String!) -> TangentClass {
+    func classesMaker  (_ subject: String, period: String) -> TangentClass {
         let newClass = TangentClass()
-        newClass.instructor = instructor
         newClass.period = period
         newClass.subject = subject
         
@@ -115,6 +115,68 @@ class ClassesViewController: UIViewController, UITableViewDelegate, UITableViewD
         print(joinCode)
     }
     
+    func googleClassroomList()   {
+        
+        //let sharedInstance = GIDSignIn.sharedInstance()
+        //let handler = sharedInstance
+        googleClassroomService.apiKey = "AIzaSyBOGamjhRuu45T2jT7Qa3LmtntSwgIxeqo"
+        let query = GTLRClassroomQuery_CoursesList.query()
+        let group = DispatchGroup()
+        
+        
+        query.pageSize = 1000
+        print("HERE IS QUERY??? \(query)")
+        group.enter()
+        var allOfTheCourses : [GTLRClassroom_Course] = []
+        
+        let classQuery = googleClassroomService.executeQuery(query, completionHandler: { ticket , fileList, error in
+        
+        if error != nil {
+            let message = "Error: \(error?.localizedDescription ?? "")"
+            print(message)
+        } else {
+            group.leave()
+            if let list = (fileList as? GTLRClassroom_ListCoursesResponse) {
+                //self.fileList = list
+                print("List: \(list.courses)")
+                allOfTheCourses = list.courses!
+            }
+            else {
+                print("Error: response is not a file list")
+                print(fileList)
+                
+                
+            }
+            }
+       group.notify(queue: DispatchQueue.main) {
+            self.courseArray = allOfTheCourses
+            self.addCoursesToList(allOfTheCourses)
+            }
+    }
+    )
+    }
+    
+    func addCoursesToList(_ courses: [GTLRClassroom_Course]) {
+        
+        for course in courses   {
+            if course.courseState == "ACTIVE"   {
+            let name = course.name!
+            let period = course.section
+                
+            let tangentClass = classesMaker(name, period: (period ?? ""))
+            classArray.append(tangentClass)
+                
+            }
+        }
+        classesTableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToClassSegue"   {
+            let destination: ProjectsViewController = segue.destination as! ProjectsViewController
+            destination.selectedCourse = courseArray[selectedIndex]
+        }
+    }
     
     /*
     // MARK: - Navigation

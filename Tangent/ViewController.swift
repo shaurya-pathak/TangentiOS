@@ -17,7 +17,7 @@ import GTMSessionFetcher
 
 var goatUser = Auth.auth().currentUser?.uid
 
-let googleDriveService = GTLRDriveService()
+let googleClassroomService = GTLRClassroomService()
 var googleUser: GIDGoogleUser?
 
 class ViewController: UIViewController, GIDSignInDelegate   {
@@ -64,13 +64,13 @@ class ViewController: UIViewController, GIDSignInDelegate   {
         print("Google Sign In didSignInForUser")
         if let error = error {
             print(error.localizedDescription)
-            googleDriveService.authorizer = nil
+            googleClassroomService.authorizer = nil
             googleUser = nil
             
             return
         }
         else    {
-            googleDriveService.authorizer = user.authentication.fetcherAuthorizer()
+            googleClassroomService.authorizer = user.authentication.fetcherAuthorizer()
             googleUser = user
         }
         guard let authentication = user.authentication else { return }

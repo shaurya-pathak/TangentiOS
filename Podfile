@@ -57,6 +57,9 @@ target 'Tangent' do
   # Google Drive Picking
   pod 'HSGoogleDrivePicker', '~> 3.0’
   
+  # Checkmark
+  pod 'SimpleCheckbox'
+  
   target 'TangentTests' do
     inherit! :search_paths
     # Pods for testing

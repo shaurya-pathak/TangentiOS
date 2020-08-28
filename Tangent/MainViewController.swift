@@ -10,6 +10,7 @@ import UIKit
 import SFProgressCircle
 import GoogleAPIClientForREST
 import GoogleSignIn
+import Alamofire
 
 class Gradient  {
     var startColor: UIColor!
@@ -24,7 +25,7 @@ var projectText = "Turn In Executive Summary"
 
 class MainViewController: UIViewController {
 
-    let googleClassroomService = GTLRClassroomService()
+    //let googleClassroomService = GTLRClassroomService()
     
     @IBOutlet weak var progressCircle: SFCircleGradientView!
     @IBOutlet weak var progressCircleLabel: UILabel!
@@ -37,7 +38,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var projectLabel: UILabel!
     @IBOutlet weak var navigationBar: UITabBarItem!
     @IBOutlet weak var submitButton: UIButton!
-    var fileList: GTLRClassroomQuery_CoursesList!
+    //var fileList: GTLRClassroomQuery_CoursesList!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +52,33 @@ class MainViewController: UIViewController {
         initalizeGradients()
         print()
         
-        googleClassroomList()
+        //googleClassroomList()
+        
+        let urlString = "https://jsonplaceholder.typicode.com/posts"
+        let url = URL(string: urlString)
+        
+        guard url != nil else   {
+            return
+        }
+        
+        let session = URLSession.shared
+        
+        let dataTask = session.dataTask(with: url!) { (data, response, err) in
+            if err == nil && data != nil{
+                let decoder = JSONDecoder()
+                
+                do  {
+                
+                let list = try decoder.decode(GoogleClassroomList.self, from: data!)
+                    print(list)
+                }
+                catch  {
+                    print("error in parsing")
+                }
+            }
+        }
+        
+        dataTask.resume()
         
         //setTheme()
         // Do any additional setup after loading the view.
@@ -134,7 +161,8 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func settingsButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "settingsSegue", sender: self)
+        GIDSignIn.sharedInstance().signOut()
+        performSegue(withIdentifier: "signOutSegue", sender: self)
     }
     
     @IBAction func submitButtonTapped(_ sender: Any) {
@@ -142,31 +170,41 @@ class MainViewController: UIViewController {
     }
     
     func googleClassroomList()   {
-        let classroomService = GTLRClassroomService()
+        
+        //let group = DispatchGroup()
         //let sharedInstance = GIDSignIn.sharedInstance()
         //let handler = sharedInstance
-        //classroomService.key = "258602243547-vg2s8qec0dr9eipava9meu5fcq6tqmcd.apps.googleusercontent.com"
+        googleClassroomService.apiKey = "AIzaSyBOGamjhRuu45T2jT7Qa3LmtntSwgIxeqo"
         let query = GTLRClassroomQuery_CoursesList.query()
         
         query.pageSize = 1000
+        print("HERE IS QUERY??? \(query)")
         
-        let classQuery = classroomService.executeQuery(query, completionHandler: { ticket , fileList, error in
+        let classQuery = googleClassroomService.executeQuery(query, completionHandler: { ticket , fileList, error in
         
         if error != nil {
             let message = "Error: \(error?.localizedDescription ?? "")"
             print(message)
         } else {
-            if let list = fileList as? GTLRClassroomQuery_CoursesList {
-                self.fileList = list
-                print("HI THE LIST IS HERE SHARUUUU \(list)")
+            
+            if let list = (fileList as? GTLRClassroom_ListCoursesResponse) {
+                
+                //self.fileList = list
+                print("List: \(list.courses)")
+                print("After request is complete")
             }
             else {
                 print("Error: response is not a file list")
+                
             }
             }
             
+            
+            
     }
-    ) }
+    )
+    }
+    
     
     /*
     // MARK: - Navigation

@@ -34,6 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate    {
                                                        accessToken: authentication.accessToken)
         // ...
         
+        
+        
         Auth.auth().signIn(with: credential) { (authResult, error) in
             if let error = error {
                 // ...
@@ -59,7 +61,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate    {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance()?.scopes =
-        [kGTLRAuthScopeDrive, "https://www.googleapis.com/auth/classroom.courses"]
+        [kGTLRAuthScopeDrive, "https://www.googleapis.com/auth/classroom.courses",
+        "https://www.googleapis.com/auth/classroom.coursework.me.readonly",
+        "https://www.googleapis.com/auth/classroom.profile.emails",
+        "https://www.googleapis.com/auth/classroom.profile.photos",
+        "https://www.googleapis.com/auth/classroom.rosters",
+
+        "https://www.googleapis.com/auth/classroom.coursework.me",
+        "https://www.googleapis.com/auth/classroom.coursework.me.readonly",
+        "https://www.googleapis.com/auth/classroom.coursework.students",
+        "https://www.googleapis.com/auth/classroom.coursework.students.readonly"]
+        GTLRClassroomService().apiKey = "AIzaSyBOGamjhRuu45T2jT7Qa3LmtntSwgIxeqo"
         
         
         return true

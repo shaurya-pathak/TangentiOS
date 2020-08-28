@@ -27,7 +27,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setTheme()
+        // setTheme()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -13,7 +13,24 @@ import GoogleAPIClientForREST
 import GoogleSignIn
 import HSGoogleDrivePicker
 
-class SubmissionViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+struct submission   {
+    
+    var submitText : String!
+    var icon : UIImage!
+    
+}
+
+class submitCell : UITableViewCell {
+    
+    @IBOutlet weak var iconImage: UIImageView!
+    @IBOutlet weak var submissionLabel: UILabel!
+    @IBOutlet weak var deleteSubmissionButton: UIButton!
+    
+}
+
+class SubmissionViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource {
+    
+    
 
     @IBOutlet weak var firstPageImage: UIImageView!
     @IBOutlet weak var secondPageImage: UIImageView!
@@ -21,50 +38,67 @@ class SubmissionViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var gradientBg: UIImageView!
     @IBOutlet weak var submitProjectLabel: UILabel!
     @IBOutlet weak var projectNameLabel: UILabel!
-    @IBOutlet weak var page1View: UIView!
+    /*@IBOutlet weak var page1View: UIView!
     @IBOutlet weak var page2View: UIView!
     @IBOutlet weak var page3View: UIView!
     @IBOutlet weak var page1Label: UILabel!
     @IBOutlet weak var page2Label: UILabel!
-    @IBOutlet weak var page3Label: UILabel!
+    @IBOutlet weak var page3Label: UILabel!*/
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet var backgroundView: UIView!
+    @IBOutlet weak var submissionTableView: UITableView!
     
     // Google Drive Access
     let picker = HSDrivePicker()
     
     var imagePicker = UIImagePickerController()
     var indexImagePicker = 0
-    var img : [UIImageView] = []
+    
+    var submissionArray : [submission] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         imagePicker.delegate = self
-        img = [firstPageImage, secondPageImage, thirdPageImage]
+        submissionTableView.delegate = self
+        submissionTableView.dataSource = self
         //setTheme()
+        
     }
-    
-    @IBAction func firstPageButtonPress(_ sender: Any) {
-        addImage(0)
-    }
-    
-    @IBAction func secondPageButtonPress(_ sender: Any) {
-        addImage(1)
-    }
-    
-    @IBAction func thirdPageButtonPress(_ sender: Any) {
-        addImage(2)
-    }
+
     
     @IBAction func addFileFromGoogleDriveButtonPressed(_ sender: Any) {
-        addFileFromGoogleDrive()
+        let appearance = SCLAlertView.SCLAppearance(
+            showCircularIcon: false
+        )
+        let alertView = SCLAlertView(appearance: appearance)
+        alertView.addButton("Google Drive") {
+            self.addFileFromGoogleDrive()
+        }
+        alertView.addButton("Add Image") {
+            self.addImage()
+        }
+        alertView.showInfo("Add Files", subTitle: "What type of file would you like to add?")
+        
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return submissionArray.count
+    }
     
-    func addImage (_ index: Int)    {
-        indexImagePicker = index
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "submitCell", for: indexPath) as? submitCell else {
+            fatalError("No CardTableViewCell for cardCell id")
+        }
+        let index = indexPath.row
+        cell.iconImage.image = submissionArray[index].icon
+        cell.submissionLabel.text = submissionArray[index].submitText
+        cell.deleteSubmissionButton.tag = index
+        return cell
+    }
+    
+    func addImage ()    {
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = false
         present(imagePicker, animated: true, completion: nil)
@@ -73,7 +107,10 @@ class SubmissionViewController: UIViewController, UIImagePickerControllerDelegat
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             
-            img[indexImagePicker].image = image
+            let img = image
+            let imgName = "Image"
+            submissionArray.append(submission(submitText: imgName, icon: img))
+            submissionTableView.reloadData()
             
         }
         else    {
@@ -122,37 +159,54 @@ class SubmissionViewController: UIViewController, UIImagePickerControllerDelegat
         }
         alertView.showInfo("Submit", subTitle: "This will submit your work to Google Classroom as well.")
     }
-    
-    func setTheme   ()  {
-        let theme = Themes[selectedTheme]
-        let primary = theme.primary
-        let secondary = theme.secondary
-        submitProjectLabel.textColor = secondary
-        projectNameLabel.textColor = secondary
-        page1View.backgroundColor = secondary
-        page2View.backgroundColor = secondary
-        page3View.backgroundColor = secondary
-        page1Label.textColor = primary
-        page2Label.textColor = primary
-        page3Label.textColor = primary
-        submitButton.backgroundColor = secondary
-        submitButton.setTitleColor(primary, for: .normal)
-        backgroundView.backgroundColor = primary
-        
-        
-        
-    }
-    
+
     func addFileFromGoogleDrive()  {
         
         picker.pick(from: self) {
             (manager, file) in
 
-            print("picked file: \(file?.name ?? "-none-")")
+            print("picked file: \(file?.iconLink ?? "-none-")")
+            let name = file?.name
+            let image = file?.iconLink
+            var pic : UIImage!
+            if image == "https://drive-thirdparty.googleusercontent.com/16/type/application/vnd.google-apps.document"   {
+                pic = UIImage(named: "googleDocsLogo")
+            }
+            if image == "https://drive-thirdparty.googleusercontent.com/16/type/application/vnd.google-apps.spreadsheet"    {
+                pic = UIImage(named: "googleSheetsLogo")
+            }
+            if image == "https://drive-thirdparty.googleusercontent.com/16/type/application/pdf"    {
+                pic = UIImage(named: "pdfLogo")
+            }
+            if image == "https://drive-thirdparty.googleusercontent.com/16/type/application/vnd.google-apps.presentation"    {
+                pic = UIImage(named: "googleSlidesLogo")
+            }
+            
+            self.submissionArray.append(submission(submitText: name, icon: pic))
+            self.submissionTableView.reloadData()
         }
+        
+    }
+    
+    func addFileFromGallery()   {
+        
     }
     
     
+    @IBAction func deleteSubmissionAtIndex(_ sender: UIButton) {
+        print(sender.tag)
+        let fileToDelete = submissionArray[sender.tag].submitText!
+        let appearance = SCLAlertView.SCLAppearance(
+            showCircularIcon: false
+        )
+        let alertView = SCLAlertView(appearance: appearance)
+        alertView.addButton("Remove") {
+            self.submissionArray.remove(at: sender.tag)
+            self.submissionTableView.reloadData()
+        }
+        alertView.showInfo("Delete", subTitle: "Are you sure you want to remove \(fileToDelete)")
+        
+    }
     
     /*
     // MARK: - Navigation
