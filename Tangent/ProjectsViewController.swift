@@ -78,17 +78,19 @@ class ProjectsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func courseWorkCreate() {
-        let id = selectedCourse.identifier
-        let coursework = GTLRClassroom_CourseWork.init()
-        GTLRClassroomQuery_CoursesCourseWorkCreate.query(withObject: coursework, courseId: "127062596928")
+        //let id = selectedCourse.identifier
+        //let coursework = GTLRClassroom_CourseWork.init()
+       // GTLRClassroomQuery_Courses
     }
     
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "createProjectSegue" {
+            //let destination: CreateProjectViewController = segue.destination as! CreateProjectViewController
             let destination: ImportFromGoogleClassroomViewController = segue.destination as! ImportFromGoogleClassroomViewController
             destination.selectedCourseClass = selectedCourse
+            print(selectedCourse.identifier!)
         }
     }
     

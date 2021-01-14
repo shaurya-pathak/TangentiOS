@@ -411,6 +411,7 @@ PODS:
   - Kingfisher/Core (5.14.1)
   - leveldb-library (1.22)
   - LGButton (1.1.6)
+  - LinearProgressBar (1.0.2)
   - MessageKit (3.1.0):
     - InputBarAccessoryView (~> 4.3.0)
   - nanopb (1.30905.0):
@@ -444,11 +445,13 @@ DEPENDENCIES:
   - FirebaseUI/Storage
   - FSCalendar
   - GoogleAPIClientForREST/Classroom
+  - GoogleAPIClientForREST/Drive
   - GoogleSignIn
   - HSGoogleDrivePicker (~> 3.0)
   - IHKeyboardAvoiding
   - Kingfisher
   - LGButton
+  - LinearProgressBar
   - MessageKit
   - PubNubSwift (~> 2.0.0)
   - SCLAlertView
@@ -497,6 +500,7 @@ SPEC REPOS:
     - Kingfisher
     - leveldb-library
     - LGButton
+    - LinearProgressBar
     - MessageKit
     - nanopb
     - PromisesObjC
@@ -547,6 +551,7 @@ SPEC CHECKSUMS:
   Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   LGButton: 9f0a7f9d3030e3f504108342f6b66d64a429371b
+  LinearProgressBar: 619d6f286b608e501f39406557f60cdab3faf910
   MessageKit: 3beb578737a5aa2bba25cc27c7b6d6faa09af5a7
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
@@ -557,6 +562,6 @@ SPEC CHECKSUMS:
   SimpleCheckbox: ddcd433ab8c3a8f57300bebda13151a8f302c7f9
   UICircularProgressRing: e6852e8f88e296cbbbe2720cccb55241acda6708
 
-PODFILE CHECKSUM: 96f58e56a7cab004c5e774c0f1c54ec9f7d1f1c2
+PODFILE CHECKSUM: c3debbe7e49ed3cdc904cb26027e72f36182e2e1
 
 COCOAPODS: 1.9.3

@@ -46,7 +46,7 @@ target 'Tangent' do
   pod 'SCLAlertView'
   
   # Google Drive API
-  # pod 'GoogleAPIClientForREST/Drive', '~> 1.3.7'
+  pod 'GoogleAPIClientForREST/Drive'
   
   # G Classroom API
   pod 'GoogleAPIClientForREST/Classroom'
@@ -59,6 +59,9 @@ target 'Tangent' do
   
   # Checkmark
   pod 'SimpleCheckbox'
+  
+  # Progress Bar
+  pod 'LinearProgressBar'
   
   target 'TangentTests' do
     inherit! :search_paths

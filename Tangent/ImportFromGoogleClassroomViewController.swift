@@ -72,6 +72,7 @@ class ImportFromGoogleClassroomViewController: UIViewController, UITableViewDele
     }
     
     func loadCoursework()   {
+        
         let id = selectedCourseClass.identifier
         let courseWorkQuery = GTLRClassroomQuery_CoursesCourseWorkList.query(withCourseId: id!)
         courseWorkQuery.pageSize = 10
@@ -83,7 +84,7 @@ class ImportFromGoogleClassroomViewController: UIViewController, UITableViewDele
             } else {
                 if let list = (courseworkList as? GTLRClassroom_ListCourseWorkResponse) {
                     //self.fileList = list
-                    print("List: \(list.courseWork)")
+                    print("List: \(list.courseWork![0].materials![0].link?.url)")
                     self.addCourseworkFromClassroom(list.courseWork!)
                 }
                 else {

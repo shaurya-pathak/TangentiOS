@@ -112,14 +112,13 @@ class ClassesViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func joinPreExistingClass   (_ joinCode: String)  {
-        print(joinCode)
+        
     }
     
     func googleClassroomList()   {
         
         //let sharedInstance = GIDSignIn.sharedInstance()
         //let handler = sharedInstance
-        googleClassroomService.apiKey = "AIzaSyBOGamjhRuu45T2jT7Qa3LmtntSwgIxeqo"
         let query = GTLRClassroomQuery_CoursesList.query()
         let group = DispatchGroup()
         
@@ -129,7 +128,7 @@ class ClassesViewController: UIViewController, UITableViewDelegate, UITableViewD
         group.enter()
         var allOfTheCourses : [GTLRClassroom_Course] = []
         
-        let classQuery = googleClassroomService.executeQuery(query, completionHandler: { ticket , fileList, error in
+        googleClassroomService.executeQuery(query, completionHandler: { ticket , fileList, error in
         
         if error != nil {
             let message = "Error: \(error?.localizedDescription ?? "")"
@@ -138,12 +137,10 @@ class ClassesViewController: UIViewController, UITableViewDelegate, UITableViewD
             group.leave()
             if let list = (fileList as? GTLRClassroom_ListCoursesResponse) {
                 //self.fileList = list
-                print("List: \(list.courses)")
                 allOfTheCourses = list.courses!
             }
             else {
                 print("Error: response is not a file list")
-                print(fileList)
                 
                 
             }

@@ -17,6 +17,7 @@ struct submission   {
     
     var submitText : String!
     var icon : UIImage!
+    var fileId : String!
     
 }
 
@@ -123,8 +124,31 @@ class SubmissionViewController: UIViewController, UIImagePickerControllerDelegat
         
     }
     
+    func revisionHistoryRetrieve (_ fileId: String!)    {
+        let revisionQuery = GTLRDriveQuery_RevisionsList.query(withFileId: fileId)
+        let revisionExecQuery = googleDriveService.executeQuery(revisionQuery) { (ticket, revisionList, error) in
+            if error != nil {
+                let message = "Error: \(error?.localizedDescription ?? "")"
+                print(message)
+            } else {
+                if let list = (revisionList as? GTLRDrive_RevisionList) {
+                    //self.fileList = list
+                    print("List: \((list.revisions![0].lastModifyingUser))")
+                }
+                else {
+                    print("Error: response is not a coursework list")
+                    print(revisionList)
+                    
+                    
+                }
+                }
+        }
+    }
+    
     @IBAction func submitButton(_ sender: Any) {
-        showCustomAlertView()
+        //showCustomAlertView()
+        let fileId = submissionArray[0].fileId
+        revisionHistoryRetrieve(fileId)
     }
     
     func showSimpleAlert() {
@@ -168,6 +192,7 @@ class SubmissionViewController: UIViewController, UIImagePickerControllerDelegat
             print("picked file: \(file?.iconLink ?? "-none-")")
             let name = file?.name
             let image = file?.iconLink
+            let fileId = file?.identifier
             var pic : UIImage!
             if image == "https://drive-thirdparty.googleusercontent.com/16/type/application/vnd.google-apps.document"   {
                 pic = UIImage(named: "googleDocsLogo")
@@ -182,7 +207,7 @@ class SubmissionViewController: UIViewController, UIImagePickerControllerDelegat
                 pic = UIImage(named: "googleSlidesLogo")
             }
             
-            self.submissionArray.append(submission(submitText: name, icon: pic))
+            self.submissionArray.append(submission(submitText: name, icon: pic, fileId: fileId))
             self.submissionTableView.reloadData()
         }
         
